@@ -1,0 +1,64 @@
+{
+  "model_name": "Step4D_RCJD_PINN_Forward_V1_2_RCJDCheckpoint",
+  "version_tag": "V1.2_RCJDCheckpoint",
+  "stage": "Stage2Postprocess",
+  "checkpoint_file": "best_rcjd_model.pt",
+  "checkpoint_type": "best_rcjd_model",
+  "checkpoint_phase": "finetune",
+  "selection_metric": "val_total_after_rcjd_start",
+  "dataset_mode": "split_npz",
+  "best_epoch": 3000,
+  "n_params": 1546484,
+  "ring_residual_scale": 0.0001,
+  "lambda_ring": 9999.999979768258,
+  "lambda_joint": 47.346873062541675,
+  "is_formal_rcjd_checkpoint": true,
+  "use_hard_boundary_projection": true,
+  "boundary_indices": [
+    0,
+    499
+  ],
+  "peak_search_exclude_boundary_nodes": 3,
+  "train_metrics": {
+    "RMSE": 7.035905267489477e-05,
+    "MAE": 2.8240737960933115e-05,
+    "R2": 0.9999995984622989
+  },
+  "val_metrics": {
+    "RMSE": 0.0007601423567146772,
+    "MAE": 7.594950314395495e-05,
+    "R2": 0.9999539313909388
+  },
+  "test_metrics": {
+    "RMSE": 0.00023765697686236204,
+    "MAE": 5.2937977801233494e-05,
+    "R2": 0.9999954249195759
+  },
+  "test_sample_summary": {
+    "per_sample_RMSE_mean_mm": 0.00011256532641399882,
+    "per_sample_RMSE_median_mm": 7.344312917011058e-05,
+    "per_sample_RMSE_max_mm": 0.0028713843000479286,
+    "per_sample_MAE_mean_mm": 5.2937977801233494e-05,
+    "peak_abs_error_mean_mm": 0.00023646963737722847,
+    "peak_abs_error_median_mm": 0.0001285681554650253,
+    "peak_abs_error_max_mm": 0.008981276454897102,
+    "peak_position_error_mean_m": 0.0,
+    "peak_position_error_median_m": 0.0,
+    "peak_position_error_max_m": 0.0
+  },
+  "test_joint_discontinuity_summary": {
+    "joint_disp_jump_rmse_mm": 0.00020231523020490766,
+    "joint_disp_jump_mae_mm": 5.1227449552885175e-05,
+    "joint_disp_jump_max_abs_mm": 0.008110014947622542,
+    "joint_rot_jump_rmse": 3.845118134619129e-07,
+    "joint_rot_jump_mae": 1.2673974638577034e-07,
+    "joint_rot_jump_max_abs": 9.686782019443195e-06
+  },
+  "test_ring_residual_summary": {
+    "scaled_residual_abs_mean": 2.076178873267054e-08,
+    "scaled_residual_abs_median": 1.6074380715380698e-09,
+    "scaled_residual_abs_p95": 1.0468622058112943e-07,
+    "scaled_residual_abs_max": 2.5918725441442803e-06
+  },
+  "postprocess_time_sec": 0.5375518798828125
+}

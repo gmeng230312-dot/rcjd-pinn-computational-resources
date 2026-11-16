@@ -1,0 +1,124 @@
+{
+  "project": {
+    "name": "Step7_Posterior_Reliability_V4_NonparametricPosterior",
+    "version": "V4_NonparametricPosterior_20260627",
+    "random_seed": 20260627,
+    "project_root": ".",
+    "output_root": "outputs/posterior"
+  },
+  "paths": {
+    "step6_case_results_root": "outputs/inversion",
+    "step3_dataset_dir": "06_Dataset",
+    "step4d_model_dir": "01_RCJD_PINN"
+  },
+  "exporter": {
+    "case_file_pattern": "step6v2b_case_result.npz",
+    "case_selection_strategy": "median_inv_rmse",
+    "manual_case_npz": "",
+    "use_observation_indices": true,
+    "dataset_splits": [
+      "train",
+      "val",
+      "test"
+    ],
+    "response_faulting_type": "abs",
+    "save_features_raw": true,
+    "posterior_resample_size": 2000,
+    "target_ess_fraction": 0.1,
+    "min_ess_fraction": 0.05,
+    "max_ess_fraction": 0.2,
+    "sigma_search_num": 200,
+    "exclude_selected_global_sample": false,
+    "likelihood_metric": "rmse",
+    "likelihood_use_abs_error_mm": false
+  },
+  "reliability": {
+    "peak_abs": true,
+    "primary_threshold_mode": "prior_quantile",
+    "primary_prior_quantiles": [
+      0.8,
+      0.9,
+      0.95
+    ],
+    "include_relative_to_map_supplement": false,
+    "relative_threshold_gammas": [
+      1.1,
+      1.25,
+      1.5,
+      1.75,
+      2.0
+    ],
+    "custom_thresholds_m": {
+      "w": [],
+      "opening": [],
+      "faulting": []
+    },
+    "affected_fraction_of_peak": 0.5,
+    "exceedance_curve_points": 300,
+    "exceedance_threshold_quantile_range": [
+      0.001,
+      0.999
+    ],
+    "convergence_response": "w",
+    "representative_threshold_mode_for_convergence": "prior_quantile",
+    "representative_prior_quantile_for_convergence": 0.9,
+    "convergence_draws": 20000,
+    "convergence_checkpoints": [
+      100,
+      200,
+      500,
+      1000,
+      2000,
+      5000,
+      10000,
+      20000
+    ],
+    "summary_quantiles": [
+      0.05,
+      0.5,
+      0.95
+    ],
+    "safety_reserve_thresholds_m": {
+      "w": [],
+      "opening": [],
+      "faulting": []
+    },
+    "method_note": "Main reliability uses prior P80/P90/P95 thresholds to avoid uninformative zero Pf under overly large code-level limits. Code-level limits, if provided, are reported only as safety-reserve checks.",
+    "auto_select_convergence_case": true,
+    "convergence_response_preference": [
+      "faulting",
+      "opening",
+      "w"
+    ],
+    "convergence_candidate_prior_quantiles": [
+      0.9,
+      0.95,
+      0.8
+    ],
+    "convergence_target_posterior_pf": 0.05,
+    "convergence_posterior_pf_range": [
+      0.01,
+      0.2
+    ]
+  },
+  "large_mc_optional": {
+    "enabled": false,
+    "n_samples": 100000,
+    "adapter_path": "custom_rcjd_pinn_large_mc_adapter.py",
+    "batch_size": 8192,
+    "device": "cuda_if_available",
+    "note": "Optional module. It must use a trained Step4D RCJD-PINN as a forward operator only. No retraining or inverse optimization is performed."
+  },
+  "plot": {
+    "style": "paper",
+    "font_family": "Times New Roman",
+    "dpi": 600,
+    "save_pdf": false,
+    "save_png": true,
+    "figure_width_cm_single": 10.0,
+    "figure_width_cm_double": 14.5,
+    "compact_for_paper": true,
+    "save_svg": true,
+    "note": "V4 defaults to PNG+SVG. Set save_pdf=true if PDF export is needed."
+  }
+}
