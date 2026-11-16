@@ -45,4 +45,6 @@ The final gate checks the 300-sample checkpoint replay, nine main posterior tabl
 
 ## License and citation
 
-Usage and redistribution terms will be selected and documented by the authors prior to public release. If there is no LICENSE file, public readability must not be interpreted as a grant of unrestricted reuse permissions.
+## Usage
+
+Copyright © 2026. Permission is granted to download and run these materials for noncommercial research purposes. All other rights reserved.
