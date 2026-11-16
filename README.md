@@ -1,4 +1,4 @@
-# RCJD-PINN: reproducibility materials
+# RCJD-PINN: Numerical Implementation and Reference Data
 
 This repository accompanies the manuscript on stochastic longitudinal responses of segmental shield tunnels under asymmetric thrust.
 
@@ -15,7 +15,7 @@ The numerical datasets and trained checkpoint are distributed separately as the 
 
 Python 3.9 was used for the author's Windows verification, with PyTorch 2.7.1+cu128. Install PyTorch for your hardware using its official installation instructions and install NumPy, SciPy, pandas, and Matplotlib. `requirements_minimal.txt` lists the Python modules but does not promise identical training weights across software and GPU versions. All distributed model and data files should be treated as trusted research files.
 
-## Reproduce the checked results (Windows CMD)
+## Run the Numerical Checks (Windows CMD)
 
 From the repository root with the environment activated:
 
